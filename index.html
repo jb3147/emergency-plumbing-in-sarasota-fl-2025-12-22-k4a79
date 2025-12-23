@@ -13,6 +13,11 @@
   <style>
     body { font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     .font-display { font-family: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .dropdown { position: relative; }
+    .dropdown-content { display: none; position: absolute; top: 100%; left: 0; min-width: 200px; background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); z-index: 50; margin-top: 0.5rem; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #374151; font-size: 0.875rem; transition: all 0.2s; }
+    .dropdown-content a:hover { background: #fef2f2; color: #FF5A5F; }
   </style>
 </head>
 <body class="bg-white text-[#1A1A1A] antialiased scroll-smooth">
@@ -31,6 +36,23 @@
 
         <div class="hidden md:flex items-center gap-10">
           <a href="#features" class="text-sm font-medium text-gray-700 hover:text-[#FF5A5F] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A5F] focus-visible:ring-offset-2 focus-visible:ring-offset-white">Services</a>
+          <div class="dropdown">
+            <button class="text-sm font-medium text-gray-700 hover:text-[#FF5A5F] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A5F] focus-visible:ring-offset-2 focus-visible:ring-offset-white flex items-center gap-1">
+              Service Areas
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="#sarasota">Sarasota</a>
+              <a href="#siesta-key">Siesta Key</a>
+              <a href="#lido-key">Lido Key</a>
+              <a href="#longboat-key">Longboat Key</a>
+              <a href="#lakewood-ranch">Lakewood Ranch</a>
+              <a href="#palmer-ranch">Palmer Ranch</a>
+              <a href="#gulf-gate">Gulf Gate</a>
+            </div>
+          </div>
           <a href="#benefits" class="text-sm font-medium text-gray-700 hover:text-[#FF5A5F] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A5F] focus-visible:ring-offset-2 focus-visible:ring-offset-white">Why Choose Us</a>
           <a href="#testimonials" class="text-sm font-medium text-gray-700 hover:text-[#FF5A5F] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A5F] focus-visible:ring-offset-2 focus-visible:ring-offset-white">Reviews</a>
           <a href="#faq" class="text-sm font-medium text-gray-700 hover:text-[#FF5A5F] transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF5A5F] focus-visible:ring-offset-2 focus-visible:ring-offset-white">FAQ</a>
@@ -53,6 +75,23 @@
     <div class="mobile-menu hidden md:hidden border-t border-gray-100 bg-white transition-all duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-3">
         <a href="#features" class="block text-sm font-medium text-gray-800 hover:text-[#FF5A5F] py-2 transition-colors duration-300">Services</a>
+        <div class="mobile-dropdown">
+          <button class="mobile-dropdown-toggle w-full flex items-center justify-between text-sm font-medium text-gray-800 hover:text-[#FF5A5F] py-2 transition-colors duration-300">
+            Service Areas
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mobile-dropdown-icon transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="mobile-dropdown-content hidden pl-4 pt-2 space-y-2">
+            <a href="#sarasota" class="block text-sm text-gray-700 hover:text-[#FF5A5F] py-1">Sarasota</a>
+            <a href="#siesta-key" class="block text-sm text-gray-700 hover:text-[#FF5A5F] py-1">Siesta Key</a>
+            <a href="#lido-key" class="block text-sm text-gray-700 hover:text-[#FF5A5F] py-1">Lido Key</a>
+            <a href="#longboat-key" class="block text-sm text-gray-700 hover:text-[#FF5A5F] py-1">Longboat Key</a>
+            <a href="#lakewood-ranch" class="block text-sm text-gray-700 hover:text-[#FF5A5F] py-1">Lakewood Ranch</a>
+            <a href="#palmer-ranch" class="block text-sm text-gray-700 hover:text-[#FF5A5F] py-1">Palmer Ranch</a>
+            <a href="#gulf-gate" class="block text-sm text-gray-700 hover:text-[#FF5A5F] py-1">Gulf Gate</a>
+          </div>
+        </div>
         <a href="#benefits" class="block text-sm font-medium text-gray-800 hover:text-[#FF5A5F] py-2 transition-colors duration-300">Why Choose Us</a>
         <a href="#testimonials" class="block text-sm font-medium text-gray-800 hover:text-[#FF5A5F] py-2 transition-colors duration-300">Reviews</a>
         <a href="#faq" class="block text-sm font-medium text-gray-800 hover:text-[#FF5A5F] py-2 transition-colors duration-300">FAQ</a>
@@ -189,7 +228,7 @@
                         <i class="fa-solid fa-star text-xs ml-0.5"></i>
                         <i class="fa-solid fa-star text-xs ml-0.5"></i>
                       </div>
-                      <p class="text-xs text-gray-600 leading-snug">“They were at my door in under 40 minutes and stopped a major slab leak.”</p>
+                      <p class="text-xs text-gray-600 leading-snug">"They were at my door in under 40 minutes and stopped a major slab leak."</p>
                     </div>
                     <span class="text-[11px] font-medium text-gray-500 uppercase tracking-[0.16em] text-right">Real Sarasota Homeowner</span>
                   </div>
@@ -211,7 +250,7 @@
                 </div>
                 <div class="rounded-2xl border border-dashed border-[#FF5A5F]/40 bg-white/70 backdrop-blur px-4 py-3 flex items-center justify-between gap-3">
                   <p class="text-xs text-gray-700 leading-snug">
-                    Mention <span class="font-semibold text-[#FF5A5F]">“Rapid Sarasota”</span> when you call for <span class="font-semibold">priority dispatch</span> during active storms and heavy rain.
+                    Mention <span class="font-semibold text-[#FF5A5F]">"Rapid Sarasota"</span> when you call for <span class="font-semibold">priority dispatch</span> during active storms and heavy rain.
                   </p>
                   <span class="hidden sm:inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FF5A5F]/10 text-[#FF5A5F]">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -381,7 +420,7 @@
               Emergency Plumbing That Protects Your Home & Peace of Mind
             </h2>
             <p class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
-              When water, sewage, or gas issues threaten your home, you need more than a “guy with a wrench.” You need a calm, professional team that moves fast, communicates clearly, and treats your property like it is their own. Our emergency-first approach is built to limit damage, protect your family, and restore normal life as quickly as possible.
+              When water, sewage, or gas issues threaten your home, you need more than a "guy with a wrench." You need a calm, professional team that moves fast, communicates clearly, and treats your property like it is their own. Our emergency-first approach is built to limit damage, protect your family, and restore normal life as quickly as possible.
             </p>
             <div class="grid grid-cols-3 gap-4 pt-3">
               <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
@@ -450,7 +489,7 @@
                 <h3 class="font-display font-semibold text-lg text-white tracking-tight">Fast Fixes with Long-Term Reliability</h3>
               </div>
               <p class="text-sm text-gray-300 font-light leading-relaxed">
-                We move quickly, but we do not cut corners. Our repairs are engineered to hold up long after the emergency is over—using high-quality materials that match or exceed code requirements for Sarasota’s coastal climate and water conditions.
+                We move quickly, but we do not cut corners. Our repairs are engineered to hold up long after the emergency is over—using high-quality materials that match or exceed code requirements for Sarasota's coastal climate and water conditions.
               </p>
               <ul class="mt-1 space-y-1.5 text-sm text-gray-300 font-light">
                 <li class="flex items-start gap-2">
@@ -510,7 +549,7 @@
                 Burst pipes, slab leaks, overflowing toilets, sewage backups, water heater failures, gas leaks, broken shutoff valves, clogged main lines, storm-related flooding, and more. If it is urgent, wet, or dangerous, we are your first call.
               </p>
               <p class="text-xs text-gray-400 font-light leading-relaxed">
-                Not sure if it is an “emergency”? Call anyway. We will help you decide whether you need immediate dispatch or priority same-day scheduling, and we will walk you through simple steps to protect your property in the meantime.
+                Not sure if it is an "emergency"? Call anyway. We will help you decide whether you need immediate dispatch or priority same-day scheduling, and we will walk you through simple steps to protect your property in the meantime.
               </p>
             </div>
           </div>
@@ -622,7 +661,7 @@
               <span class="text-[11px] text-gray-500 ml-2">Emergency slab leak</span>
             </div>
             <p class="text-sm text-gray-700 font-light leading-relaxed flex-1">
-              “We discovered a warm spot and water pooling in our dining room at 11 PM. I called and immediately reached a real person who calmly walked me through shutting off the main. Their plumber arrived in about 40 minutes, found a slab leak, and had a temporary fix in place that night. The next morning they completed the full repair with almost no demo. Professional, clean, and honest about pricing—worth every penny.”
+              "We discovered a warm spot and water pooling in our dining room at 11 PM. I called and immediately reached a real person who calmly walked me through shutting off the main. Their plumber arrived in about 40 minutes, found a slab leak, and had a temporary fix in place that night. The next morning they completed the full repair with almost no demo. Professional, clean, and honest about pricing—worth every penny."
             </p>
           </article>
 
@@ -647,14 +686,14 @@
               <span class="text-[11px] text-gray-500 ml-2">Commercial backup</span>
             </div>
             <p class="text-sm text-gray-700 font-light leading-relaxed flex-1">
-              “Our main floor drain backed up an hour before dinner service on a Saturday. Sarasota Rapid Response Plumbing had a crew on-site in under 30 minutes, cleared the line, camera inspected it, and helped us put a plan in place to prevent it from happening again. Thanks to their same-day service, we did not have to close or lose revenue that night.”
+              "Our main floor drain backed up an hour before dinner service on a Saturday. Sarasota Rapid Response Plumbing had a crew on-site in under 30 minutes, cleared the line, camera inspected it, and helped us put a plan in place to prevent it from happening again. Thanks to their same-day service, we did not have to close or lose revenue that night."
             </p>
           </article>
 
           <article class="rounded-xl border border-gray-100 bg-white shadow-md hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 ease-out p-6 flex flex-col h-full">
             <div class="flex items-center justify-between gap-3 mb-3">
               <div>
-                <h3 class="font-semibold text-sm text-[#1A1A1A]">Karen O’Neill</h3>
+                <h3 class="font-semibold text-sm text-[#1A1A1A]">Karen O'Neill</h3>
               <p class="text-xs text-gray-500">Property Manager, Siesta Key Rentals</p>
               </div>
               <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FFD166]/30 text-[#AA7B00]">
@@ -672,7 +711,7 @@
               <span class="text-[11px] text-gray-500 ml-2">Vacation rental support</span>
             </div>
             <p class="text-sm text-gray-700 font-light leading-relaxed flex-1">
-              “With 30+ vacation rentals, plumbing emergencies are inevitable. This team has become our go-to partner. They respond quickly, communicate professionally with guests, and send before/after photos along with clear invoices. They have handled everything from broken water heaters to overflowing toilets without a single negative guest review—huge for our business.”
+              "With 30+ vacation rentals, plumbing emergencies are inevitable. This team has become our go-to partner. They respond quickly, communicate professionally with guests, and send before/after photos along with clear invoices. They have handled everything from broken water heaters to overflowing toilets without a single negative guest review—huge for our business."
             </p>
           </article>
 
@@ -697,7 +736,7 @@
               <span class="text-[11px] text-gray-500 ml-2">Water heater failure</span>
             </div>
             <p class="text-sm text-gray-700 font-light leading-relaxed flex-1">
-              “Our water heater failed on a cold morning and started leaking into the garage. They answered on the second ring, helped me shut off the water, and had a tech out the same day. He explained my options clearly, had a new unit on the truck, and we had hot water again by that evening. It went from panic to relief in just a few hours.”
+              "Our water heater failed on a cold morning and started leaking into the garage. They answered on the second ring, helped me shut off the water, and had a tech out the same day. He explained my options clearly, had a new unit on the truck, and we had hot water again by that evening. It went from panic to relief in just a few hours."
             </p>
           </article>
         </div>
@@ -710,12 +749,12 @@
           <div>
             <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#FF5A5F] mb-2">About Us</p>
             <h2 class="font-display font-bold tracking-tight text-3xl md:text-4xl text-[#1A1A1A]">
-              Sarasota’s Dedicated Emergency Plumbing Team
+              Sarasota's Dedicated Emergency Plumbing Team
             </h2>
           </div>
           <div class="md:col-span-2 space-y-4 text-sm md:text-base text-gray-700 font-light leading-relaxed">
             <p>
-              Sarasota Rapid Response Plumbing was founded by a second-generation master plumber who grew up fixing leaks in Sarasota’s older coastal homes. After seeing too many families left stranded by slow, unreliable “24/7” services, he built a company focused solely on true emergency readiness—staffing live dispatchers, strategically placing trucks across the city, and investing in advanced diagnostic tools. What began as a single truck covering a few neighborhoods has grown into a tightly coordinated team serving Sarasota, Siesta Key, Lakewood Ranch, and surrounding communities.
+              Sarasota Rapid Response Plumbing was founded by a second-generation master plumber who grew up fixing leaks in Sarasota's older coastal homes. After seeing too many families left stranded by slow, unreliable "24/7" services, he built a company focused solely on true emergency readiness—staffing live dispatchers, strategically placing trucks across the city, and investing in advanced diagnostic tools. What began as a single truck covering a few neighborhoods has grown into a tightly coordinated team serving Sarasota, Siesta Key, Lakewood Ranch, and surrounding communities.
             </p>
             <p>
               Our mission is simple: protect Sarasota homes and businesses from the hidden costs of plumbing emergencies through rapid response, skilled workmanship, and honest communication. We value transparency, safety, and respect on every job—showing up when we say we will, presenting clear options before we touch a wrench, and leaving your space cleaner than we found it. Whether we are stopping a burst pipe at midnight or advising on preventive upgrades, we operate with the same core belief: your trust is our most important tool.
@@ -734,7 +773,7 @@
               Emergency Plumbing in Sarasota, Explained
             </h2>
             <p class="text-sm md:text-base text-gray-700 font-light">
-              Have questions about timing, pricing, or what counts as an “emergency”? Here are answers to the most common questions we hear from Sarasota homeowners and businesses.
+              Have questions about timing, pricing, or what counts as an "emergency"? Here are answers to the most common questions we hear from Sarasota homeowners and businesses.
             </p>
           </div>
           <div class="md:text-right text-sm text-gray-600 font-light max-w-sm">
@@ -820,7 +859,7 @@
             </button>
             <div class="faq-answer hidden px-5 pb-5 pt-0 text-sm text-gray-700 font-light leading-relaxed">
               <p class="pt-1">
-                Yes. Every field technician we send to your home or business is a fully licensed plumber authorized to work in the state of Florida and in the City of Sarasota. Our company carries comprehensive liability and workers’ compensation insurance, and we pull permits when required for larger repairs. We are happy to provide license and insurance details upon request, and many of our technicians also maintain additional certifications for backflow, gas lines, and advanced leak detection.
+                Yes. Every field technician we send to your home or business is a fully licensed plumber authorized to work in the state of Florida and in the City of Sarasota. Our company carries comprehensive liability and workers' compensation insurance, and we pull permits when required for larger repairs. We are happy to provide license and insurance details upon request, and many of our technicians also maintain additional certifications for backflow, gas lines, and advanced leak detection.
               </p>
             </div>
           </div>
@@ -924,6 +963,17 @@
               icon.classList.add('fa-bars');
             }
           });
+        });
+      }
+
+      const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+      const mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
+      const mobileDropdownIcon = document.querySelector('.mobile-dropdown-icon');
+      
+      if (mobileDropdownToggle && mobileDropdownContent && mobileDropdownIcon) {
+        mobileDropdownToggle.addEventListener('click', () => {
+          mobileDropdownContent.classList.toggle('hidden');
+          mobileDropdownIcon.classList.toggle('rotate-180');
         });
       }
 
